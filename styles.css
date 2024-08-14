@@ -219,8 +219,8 @@ a.icon_project img {
 /* Mobile styles */
 @media (max-aspect-ratio: 2/3) {
   #music {
-    width: 25%;
-    margin-top: 100px;
+    width: 70%;
+    margin-top: 150px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -316,7 +316,7 @@ a.icon_project img {
 /* Full size styles */
 @media (min-aspect-ratio: 2/3) {
   #music {
-    width: 25%;
+    width: 50%;
     margin-top: 220px;
     margin-left: auto;
     margin-right: auto;
