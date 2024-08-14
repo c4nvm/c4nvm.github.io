@@ -216,103 +216,6 @@ a.icon_project img {
   bottom: 1.25vw;
 }
 
-/* Mobile styles */
-@media (max-aspect-ratio: 2/3) {
-  #music {
-    width: 70%;
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #who_am_i {
-    width: 50%;
-    margin-top: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 32px;
-    color: rgb(255, 255, 255);
-    font-family: 'CustomFont', sans-serif;
-  }
-
-  .project {
-    width: 100%;
-    display: inline-block;
-  }
-
-  .project img {
-    width: 100%;
-    height: auto;
-  }
-
-  .project div.info {
-    display: inline-block;
-    padding: 4% 4% 8% 4%;
-    width: 100%;
-    left: 0;
-    border-bottom: 4px solid #e2ae00;
-  }
-
-  .project h2 {
-    margin-bottom: 2.5vw;
-    font-size: 9vw;
-  }
-
-  .project h3 {
-    font-size: 4.75vw;
-    margin-bottom: 2.5vw;
-  }
-
-  .project h4 {
-    font-size: 2.75vw;
-    padding: 1vw 1vw 1.5vw 1vw;
-  }
-
-  .project_desc {
-    margin-top: 5vw;
-    padding-bottom: 20vw;
-    font-size: 4vw;
-  }
-
-  .project_credits {
-    font-size: 3vw;
-    position: absolute;
-  }
-
-  .project_icons {
-    filter: invert(100%);
-    position: absolute;
-    bottom: 14vw;
-    left: 3vw;
-    letter-spacing: -1.5vw;
-  }
-
-  a.icon_project {
-    font-size: 32px;
-  }
-
-  a.icon_album {
-    font-size: 10vw;
-  }
-
-  a.icon_blog {
-    position: absolute;
-    right: 10vw;
-    top: 13vw;
-    font-size: 7vw;
-    z-index: 100;
-  }
-
-  .project:last-of-type div.info {
-    border-bottom: 0;
-  }
-
-  .project a:hover,
-  .project a:active {
-    color: #e2ae00;
-  }
-}
-
 /* Full size styles */
 @media (min-aspect-ratio: 2/3) {
   #music {
@@ -518,6 +421,100 @@ a.icon_project img {
     top: 2.5em;
     font-size: 3.2em;
     z-index: 100;
+  }
+}
+
+/* Mobile styles */
+@media (max-aspect-ratio: 2/3) {
+  /* Social media icons at the bottom */
+  #social-media {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  /* Tab icons at the top */
+  #icons {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed; /* Change to fixed to always keep it on top */
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8); /* Optional: add a background to the icons for better visibility */
+    z-index: 1000;
+    margin: 0; /* Adjust margin to fit the screen */
+    right: 0;
+    left: 0;
+  }
+
+  /* Album list with info to the right */
+  .project {
+    display: flex;
+    flex-direction: row; /* Display albums in a row with the info to the right */
+    width: 100%;
+    margin-bottom: 20px; /* Add spacing between albums */
+  }
+
+  .project img {
+    width: 40%; /* Adjust width as needed */
+    height: auto;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+  }
+
+  .project div.info {
+    width: 60%; /* Adjust width as needed */
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+  }
+  
+  .project h2 {
+    font-size: 5vw;
+  }
+
+  .project h3 {
+    font-size: 4vw;
+    margin-bottom: 1vw;
+  }
+
+  .project h4 {
+    font-size: 3vw;
+    padding: 1vw 1vw 1.5vw 1vw;
+  }
+
+  .project_desc {
+    margin-top: 2vw;
+    font-size: 3.5vw;
+  }
+
+  .project_credits {
+    font-size: 3vw;
+  }
+
+  .project_icons {
+    display: none; /* Hide project icons on mobile */
+  }
+  
+  /* Adjusting other elements to fit within the new layout */
+  #music {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+
+  #who_am_i, #blog, #contact {
+    width: 90%;
+    margin: 20px auto;
+    font-size: 24px;
   }
 }
 
