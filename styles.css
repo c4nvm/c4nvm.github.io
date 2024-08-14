@@ -1,0 +1,593 @@
+body {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/02/Television_static.gif');
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Black background with 50% opacity */
+  z-index: -1; /* Ensure it is above other content */
+  pointer-events: none; /* Allow interactions with elements below the overlay */
+}
+
+/* Custom Font Import */
+@font-face {
+  font-family: 'CustomFont';
+  src: url('assets/fonts/vhs-mono-display.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Tab icon styles */
+#icons {
+  display: flex;
+  justify-content: flex-end; /* Right-justify tabs */
+  position: absolute;
+  top: 40px; /* Adjust this value to move the tabs up */
+  right: 0;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 1000;
+  margin-left: auto;
+  margin-right: 635px;
+}
+
+/* Ensure default color for SVG icons */
+.tab-link svg {
+  color: #fff; /* Default color */
+}
+
+/* Color when tab is active */
+.tab-link.current svg {
+  color: #ffca1e; /* Active color */
+}
+
+/* Hover color */
+.tab-link:hover svg {
+  color: #e2ae00; /* Hover color */
+}
+
+/* Default color for tab-link, which affects SVG fill */
+.tab-link {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000; /* Default text color, affects SVG */
+  border-radius: 5px;
+  margin-left: 5px;
+  background-color: rgba(245, 245, 245, 0); /* Transparent background */
+}
+
+/* Active state color for tab-link, affects SVG */
+.tab-link.current {
+  color: #ffca1e; /* Active color */
+}
+
+/* Hover color for tab-link, affects SVG */
+.tab-link:hover {
+  color: #e2ae00; /* Hover color */
+}
+
+/* Tab content styles */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Ensure default color for SVG icons */
+.tab-link svg {
+  fill: #000; /* Default color */
+}
+
+/* Icon styles */
+.tab-link img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Project styles */
+.project {
+  line-height: 0;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectWrapper {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  filter: blur(30px);
+}
+
+.project div.info {
+  line-height: 1;
+  left: 50%;
+  width: 50%;
+  min-height: 100%;
+  font-size: 16px;
+  padding: 3%;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-family: 'CustomFont', sans-serif;
+}
+
+.project div.info::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.hide {
+  display: none !important;
+}
+
+.project a {
+  color: inherit;
+}
+
+div.project_icons {
+  font-family: nav;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  filter: invert(100%);
+}
+
+a.icon_project {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-left: 330px;
+  margin-bottom: -40px;
+}
+
+a.icon_project img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project h2,
+.project h3,
+.project_desc {
+  color: white;
+  font-family: 'CustomFont', sans-serif;
+}
+
+.project h2 {
+  margin: 0;
+  letter-spacing: -0.15vw;
+  line-height: 0.87;
+}
+
+.project h3 {
+  margin-top: 1.25vw;
+  font-weight: normal;
+  line-height: 0.5;
+}
+
+.project h4 {
+  font-weight: normal;
+  position: relative;
+  margin: 0;
+  display: inline-block;
+  padding: 0.4vw;
+  border-radius: 4px;
+}
+
+.project_desc {
+  line-height: 1.2;
+}
+
+.project_credits {
+  padding-right: 8vw;
+  line-height: 1.2;
+  position: absolute;
+  bottom: 1.25vw;
+}
+
+/* Mobile styles */
+@media (max-aspect-ratio: 2/3) {
+  #music {
+    width: 25%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #who_am_i {
+    width: 50%;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    font-family: 'CustomFont', sans-serif;
+  }
+
+  .project {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .project img {
+    width: 100%;
+    height: auto;
+  }
+
+  .project div.info {
+    display: inline-block;
+    padding: 4% 4% 8% 4%;
+    width: 100%;
+    left: 0;
+    border-bottom: 4px solid #e2ae00;
+  }
+
+  .project h2 {
+    margin-bottom: 2.5vw;
+    font-size: 9vw;
+  }
+
+  .project h3 {
+    font-size: 4.75vw;
+    margin-bottom: 2.5vw;
+  }
+
+  .project h4 {
+    font-size: 2.75vw;
+    padding: 1vw 1vw 1.5vw 1vw;
+  }
+
+  .project_desc {
+    margin-top: 5vw;
+    padding-bottom: 20vw;
+    font-size: 4vw;
+  }
+
+  .project_credits {
+    font-size: 3vw;
+    position: absolute;
+  }
+
+  .project_icons {
+    filter: invert(100%);
+    position: absolute;
+    bottom: 14vw;
+    left: 3vw;
+    letter-spacing: -1.5vw;
+  }
+
+  a.icon_project {
+    font-size: 32px;
+  }
+
+  a.icon_album {
+    font-size: 10vw;
+  }
+
+  a.icon_blog {
+    position: absolute;
+    right: 10vw;
+    top: 13vw;
+    font-size: 7vw;
+    z-index: 100;
+  }
+
+  .project:last-of-type div.info {
+    border-bottom: 0;
+  }
+
+  .project a:hover,
+  .project a:active {
+    color: #e2ae00;
+  }
+}
+
+/* Full size styles */
+@media (min-aspect-ratio: 2/3) {
+  #music {
+    width: 25%;
+    margin-top: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #who_am_i {
+    width: 50%;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    font-family: 'CustomFont', sans-serif;
+  }
+
+  .project {
+    width: 25%;
+    display: inherit;
+  }
+
+  .focus {
+    float: left;
+    width: 100%;
+  }
+
+  .project img {
+    cursor: pointer;
+    width: 100%;
+    float: left;
+    height: auto;
+  }
+
+  .focus img {
+    float: left;
+    width: 50%;
+  }
+
+  .right {
+    float: right !important;
+  }
+
+  .project div.info {
+    display: none;
+  }
+
+  .focus div.info {
+    display: inherit;
+    float: left;
+    position: absolute;
+  }
+
+  .focus div.info::before {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .project h2 {
+    font-size: 5vw;
+  }
+
+  .project h3 {
+    font-size: 2.75vw;
+  }
+
+  .project h4 {
+    font-size: 1.5vw;
+    top: -1vw;
+  }
+
+  .project_desc {
+    padding-top: 1vw;
+    font-size: 2.25vw;
+  }
+
+  .project_credits {
+    font-size: 1.75vw;
+  }
+
+  .project_icons {
+    filter: invert(100%);
+    position: absolute;
+    bottom: 9.5vw;
+    margin-left: -0.75vw;
+    letter-spacing: -1.5vw;
+  }
+
+  a.icon_project {
+    font-size: 32px;
+  }
+
+  a.icon_album {
+    font-size: 7vw;
+  }
+
+  a.icon_blog {
+    right: 12%;
+    top: 10.5vw;
+    font-size: 4vw;
+    z-index: 100;
+  }
+
+  .project a:hover,
+  .project a:active {
+    color: #fffffe;
+  }
+}
+
+/* Max size styles */
+@media (min-width: 960px) {
+  #music {
+    width: 50%;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #who_am_i {
+    width: 50%;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+    font-family: 'CustomFont', sans-serif;
+  }
+
+  #blog {
+    width: 50%;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #contact {
+    width: 50%;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 32px;
+    color: white;
+    font-family: 'CustomFont', sans-serif;
+  }
+  
+  .project h2 {
+    font-size: 4em;
+  }
+
+  .project h3 {
+    margin-top: 0.5em;
+    font-size: 2.2em;
+  }
+
+  .project h4 {
+    padding: 0.32em;
+    font-size: 1.2em;
+    top: -0.8em;
+  }
+
+  .project_desc {
+    padding-top: 0.5em;
+    width: 92%;
+    font-size: 1.8em;
+  }
+
+  .project_credits {
+    padding-right: 6.4em;
+    bottom: 1em;
+    font-size: 1.4em;
+  }
+
+  .project_icons {
+    filter: invert(100%);
+    position: absolute;
+    bottom: 7.75em;
+    margin-left: -0.6em;
+    letter-spacing: -1.2em;
+  }
+
+  a.icon_project {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    vertical-align: middle;
+    margin-right: -375px;
+  }
+
+  a.icon_project img {
+    filter: invert(1);
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a.icon_album {
+    font-size: 5.6em;
+  }
+
+  a.icon_blog {
+    right: 12%;
+    top: 2.5em;
+    font-size: 3.2em;
+    z-index: 100;
+  }
+}
+
+/* General styling for input fields and text areas */
+input[type="text"],
+input[type="email"],
+textarea {
+  font-family: 'CustomFont', sans-serif; /* Use your custom font */
+  font-size: 28px; /* Adjust font size as needed */
+  color: #333; /* Dark text color for readability */
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding inside the input field */
+  width: 75%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  resize: none; /* Prevent resizing */
+  margin: 10px;
+}
+
+/* Styling for input fields on focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #ffca1e; /* Border color on focus */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Styling for submit button */
+button[type="submit"] {
+  margin-top: 20px;
+  font-family: 'CustomFont', sans-serif; /* Use your custom font */
+  font-size: 20px; /* Adjust font size as needed */
+  color: #fff; /* White text color */
+  background-color: #ffca1e; /* Button background color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Styling for submit button on hover */
+button[type="submit"]:hover {
+  background-color: #e2ae00; /* Darker background color on hover */
+}
+
+.hidden {
+  display: none;
+}
+
+#social-media {
+  position: fixed;
+  bottom: 0;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  display: flex;
+  gap: 10px; /* Space between icons */
+  background: rgba(0, 0, 0, 0.5); /* Optional background for better visibility */
+  border-radius: 5px; /* Optional rounded corners */
+  padding: 10px;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+#social-media a {
+  display: block;
+}
+
+#social-media img {
+  width: 32px; /* Adjust size as needed */
+  height: 32px;
+  filter: invert(1); /* This will make the icons white */
+}
