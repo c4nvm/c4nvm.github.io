@@ -425,7 +425,7 @@ a.icon_project img {
 }
 
 /* Mobile styles */
-@media (max-aspect-ratio: 2/3) {
+@media (max-width: 480px) {
   /* Social media icons at the bottom */
   #social-media {
     position: fixed;
