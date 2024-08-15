@@ -611,3 +611,37 @@ button[type="submit"]:hover {
   height: 32px;
   filter: invert(1); /* This will make the icons white */
 }
+
+/* Target only mobile devices */
+@media only screen and (max-width: 767px) {
+
+  /* Portrait mode */
+  @media only screen and (orientation: portrait) {
+    body {
+      display: block;
+    }
+
+    #rotateMessage {
+      display: none;
+    }
+  }
+
+  /* Landscape mode */
+  @media only screen and (orientation: landscape) {
+    body {
+      display: none;
+    }
+
+    #rotateMessage {
+      display: block;
+      text-align: center;
+      font-size: 24px;
+      color: white;
+      font-family: 'CustomFont', sans-serif;
+      background-color: #000;
+      width: 100vw;
+      height: 100vh;
+      line-height: 100vh;
+    }
+  }
+}

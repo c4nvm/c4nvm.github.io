@@ -131,3 +131,22 @@ $(document).ready(function() {
         });
     });
     
+// Function to detect mobile devices
+    function isMobileDevice() {
+        return window.matchMedia("(max-width: 767px)").matches;
+    }
+    
+    window.addEventListener("orientationchange", function() {
+        if (isMobileDevice()) {
+        if (window.orientation === 90 || window.orientation === -90) {
+            // Landscape on mobile
+            document.body.style.display = "none";
+            document.getElementById("rotateMessage").style.display = "block";
+        } else {
+            // Portrait on mobile
+            document.body.style.display = "block";
+            document.getElementById("rotateMessage").style.display = "none";
+        }
+        }
+    });
+    
